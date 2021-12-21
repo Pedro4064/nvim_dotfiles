@@ -17,11 +17,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jiangmiao/auto-pairs'
 
-vmap ++ <plug>NERDCommenterToggle
+
 
 call plug#end()
 
+
+vmap ++ <plug>NERDCommenterToggle
 
 set termguicolors
 let ayucolor="light"
