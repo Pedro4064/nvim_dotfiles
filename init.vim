@@ -6,6 +6,8 @@ set nobackup
 
 set autoindent
 set showmatch
+set incsearch
+set nohlsearch
 
 " Call all plugins
 
