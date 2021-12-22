@@ -22,9 +22,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
+Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+
 
 call plug#end()
 
+"Configure Doge - Comments Extension
+let g:doge_doc_standard_python = 'google'
 
 vmap ++ <plug>NERDCommenterToggle
 
