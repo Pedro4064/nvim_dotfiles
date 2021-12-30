@@ -23,7 +23,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'sindrets/diffview.nvim'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-
+Plug 'davidhalter/jedi-vim'
 
 call plug#end()
 
@@ -36,6 +36,17 @@ set termguicolors
 let ayucolor="light"
 " let ayucolor="mirage"
 colorscheme ayu
+
+
+" Spell-check Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal spell
+autocmd FileType gitcommit setlocal spell
+
+" Enable dictionary auto-completion in Markdown files and Git Commit Messages
+autocmd FileType markdown setlocal complete+=kspell
+autocmd FileType gitcommit setlocal complete+=kspell
+
+
 
 
 " Use ctrl-[hjkl] to select the active split!
