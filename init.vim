@@ -13,6 +13,7 @@ set nohlsearch
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'josa42/coc-sh'
 Plug 'ayu-theme/ayu-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
