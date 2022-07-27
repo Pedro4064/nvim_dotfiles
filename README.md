@@ -10,7 +10,7 @@ properly, so there is also a  step-by-step setup.
 ## Script
 To download and run the setup script you can just run the following command:
 ```bash
-curl https://github.com/Pedro4064/nvim_dotfiles/blob/master/setup.sh -o - | sh
+curl https://raw.githubusercontent.com/Pedro4064/nvim_dotfiles/master/setup.sh | bash
 ```
 
 ## Manual
