@@ -14,7 +14,11 @@ set nohlsearch
 call plug#begin('~/.vim/plugged')
 
 Plug 'ayu-theme/ayu-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
@@ -47,6 +51,30 @@ else
 endif
 
 call plug#end()
+
+" Configure Airline Statusbar
+" Note: You must define the dictionary first before setting values.
+" Also, it's a good idea to check whether it exists as to avoid 
+" accidentally overwriting its contents.
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" powerline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.dirty='⚡'
+
+" If you only see boxes here it may be because your system doesn't have
+" the correct fonts. Try it in vim first and if that fails see the help 
+" pages for vim-airline :help airline-troubleshooting
 
 " Configure Wilder
 call wilder#setup({'modes': [':', '/', '?']})
@@ -83,8 +111,7 @@ let g:doge_doc_standard_python = 'google'
 vmap ++ <plug>NERDCommenterToggle
 
 set termguicolors
-let ayucolor="light"
-" let ayucolor="mirage"
+let ayucolor="light"  " for light version of theme
 colorscheme ayu
 
 
@@ -108,6 +135,9 @@ nmap <silent> <c-l> :wincmd l<CR>
 " Open NERDTree at startup
 autocmd VimEnter * NERDTree
 let NERDTreeMapPreviewVSplit='\s'
+
+" Close after file selection
+let NERDTreeQuitOnOpen = 1
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
