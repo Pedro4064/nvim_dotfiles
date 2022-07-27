@@ -2,7 +2,7 @@
 plataform="$(uname | tr  '[:upper:]' '[:lower:]')"
 architecture="$(uname -m)"
 
-if [[ $plataform == 'Linux' ]]; then 
+if [[ $plataform == 'linux' ]]; then 
 	echo 'Running on linux'
 else 
 	echo "Running not on linux, running on: $plataform"
